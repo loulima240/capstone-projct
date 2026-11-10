@@ -7,7 +7,11 @@ authors = [
     { name = "loulima240", email = "lourencollima2006@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "google-genai==2.23.0",
+    "python-dotenv>=1.2.4",
+    "streamlit>=1.67.0",
+]
 
 [project.scripts]
 padelbuddy = "padelbuddy:main"
