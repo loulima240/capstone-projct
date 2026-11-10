@@ -1,19 +1,29 @@
-"""
-The Week 1 goal: one API call that works.
 
-Run with:  uv run python hello_ai.py
-"""
-from google import genai
-from google.genai import types
-
+import anthropic
 import config
 
-client = genai.Client(api_key=config.API_KEY)
 
-response = client.models.generate_content(
-    model=config.MODEL,
-    contents="Say hello in one short sentence.",
-    config=types.GenerateContentConfig(temperature=config.TEMPERATURE),
-)
+def main():
+    # Create the Anthropic client
+    client = anthropic.Anthropic(api_key=config.API_KEY)
 
-print(response.text)
+    # Send a test message to Claude
+    message = client.messages.create(
+        model=config.MODEL,
+        max_tokens=config.MAX_TOKENS,
+        messages=[
+            {
+                "role": "user",
+                "content": "Hello! Introduce yourself and explain how you can help me develop PadelBudy."
+            }
+        ]
+    )
+
+    # Display Claude's response
+    for block in message.content:
+        if block.type == "text":
+            print(block.text)
+
+
+if __name__ == "__main__":
+    main()
