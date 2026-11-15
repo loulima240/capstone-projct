@@ -10,7 +10,7 @@ COURTS = [
         "id": 1,
         "name": "Padel Club Cascais",
         "location": "Cascais",
-        "date": "2026-11-14",
+        "date": "2026-11-12",
         "time": "09:00",
         "court_type": "Indoor",
         "price": 32,
@@ -34,6 +34,16 @@ COURTS = [
         "time": "19:00",
         "court_type": "Indoor",
         "price": 36,
+        "provider": "Demo data"
+    },
+    {
+        "id": 4,
+        "name": "Cascais Padel Centre",
+        "location": "Cascais",
+        "date": "2026-11-12",
+        "time": "18:00",
+        "court_type": "Indoor",
+        "price": 38,
         "provider": "Demo data"
     }
 ]
